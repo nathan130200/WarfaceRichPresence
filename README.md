@@ -19,16 +19,16 @@ E feito, fica tudo personalizado no seu discord.
 
 # Cada um dos valores para editar:
 
-1: Id da aplicação (caso você quiser usar um personalizado) pressione enter em seguida.
-2: Texto que vai aparecer abaixo do jogando
-3: Texto que vai aparecer abaixo do anterior
-4: Caso a opção "Mostrar Tempo" estiver habilitada, marcar essa caixa ao lado vai poder definir o tempo final do contador do discord (Exemplo: Tempo de partida tdm contando regressivamente)
-5: Substituir o Tempo, marcar essa opção caso queira que sempre altere o tempo quando você mudar algum valor das caixas de texto
-6: Com essa opção marcada, vai decidir se exibe ou não o tempo no discord.
-7: Icone maior que vai aparecer no discord
-8: Texto que que vai aparecer em cima do icone maior (tooltip).
-9: Icone menor que vai aparecer no discord
-10: Texto que que vai aparecer em cima do icone meno (tooltip).
+- 1: Id da aplicação (caso você quiser usar um personalizado) pressione enter em seguida.
+- 2: Texto que vai aparecer abaixo do jogando
+- 3: Texto que vai aparecer abaixo do anterior
+- 4: Caso a opção "Mostrar Tempo" estiver habilitada, marcar essa caixa ao lado vai poder definir o tempo final do contador do discord (Exemplo: Tempo de partida tdm contando regressivamente)
+- 5: Substituir o Tempo, marcar essa opção caso queira que sempre altere o tempo quando você mudar algum valor das caixas de texto
+- 6: Com essa opção marcada, vai decidir se exibe ou não o tempo no discord.
+- 7: Icone maior que vai aparecer no discord
+- 8: Texto que que vai aparecer em cima do icone maior (tooltip).
+- 9: Icone menor que vai aparecer no discord
+- 10: Texto que que vai aparecer em cima do icone meno (tooltip).
 
 OBS: Icone menor e maior podem ser iguais, o discord teve uma mudança que permite isso agora.
 
