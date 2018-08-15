@@ -1,5 +1,5 @@
 # Observações
-Esse aplicativo NÃO interage de NENHUMA maneira com o cliente do jogo nem usa NENHUM ARQUIVO do jogo para funcionar, esse aplicativo utiliza o DiscordRPC (https://github.com/discordapp/discord-rpc) com o Recurso Rich Presence (Presença Rica) (https://discordapp.com/developers/docs/rich-presence/faq)
+Esse aplicativo **NÃO** interage de **NENHUMA maneira com o cliente do jogo** e nem usa **NENHUM ARQUIVO do jogo para funcionar**, esse aplicativo utiliza o DiscordRPC (https://github.com/discordapp/discord-rpc) com o Recurso Rich Presence (Presença Rica) (https://discordapp.com/developers/docs/rich-presence/faq) onde só **ALTERA O STATUS JOGANDO DO DISCORD**.
 
 # Requisitos Necesários:
 .NET Framework 4.6
