@@ -1,42 +1,31 @@
-# Observações
-Esse aplicativo **NÃO** interage de **NENHUMA maneira com o cliente do jogo** e nem usa **NENHUM ARQUIVO do jogo para funcionar**, esse aplicativo utiliza o DiscordRPC (https://github.com/discordapp/discord-rpc) com o Recurso Rich Presence (Presença Rica) (https://discordapp.com/developers/docs/rich-presence/faq) onde só **ALTERA O STATUS JOGANDO DO DISCORD**.
+# Warface Rich Presence
+Mostra o status jogando warface no seu perfil do discord.
 
-# Requisitos Necesários:
-.NET Framework 4.6
+# Observação
 
-# WarfaceRichPresence
-Adiciona exibição (MANUAL) do warface no discord como status jogando.
+Esse aplicativo não interage com o warface nos itens abaixo:
 
-## Como utilizar.
+- Não interage com os arquivos do jogo.
+- Não injeta nenhum código no processo jogo.
+- Não modifica nenhum arquivo do jogo.
+- Não necessita de rodar junto ao jogo.
 
-Assim que executar os botões vão ficar bloqueados, por que você precisa pressionar ENTER na primeira caixa de texto para fazer conexão local com o discord
+<i><b>Resumindo</b>: Não depende de absolutamente nada do warface, esse software é totalmente idependente do jogo e inclusive pode ser executado sem o jogo estar instalado, só depende apenas do discord.</i>
 
-Para alterar o comportamento no discord, basta mudar os valores e pressionar Confirmar.
+<hr/>
 
-<img src="https://i.imgur.com/iw8yO09.png"> 
+<b>Requisitos Necessários</b>
 
-E feito, fica tudo personalizado no seu discord.
+- Discord 
+- Microsoft .NET Framework 4.7.2
 
-<img src="https://i.imgur.com/6mO2GTX.png">
+<hr/>
 
-# Cada um dos valores para editar:
+<b>Utilização</b>
+ 
+- Novo tutorial em progresso, estou fazendo o rework da UI do aplicativo para ficar mais dinâmico e fácil de mexer nos valores.
 
-- 1: Id da aplicação (caso você quiser usar um personalizado) pressione enter em seguida.
-- 2: Texto que vai aparecer abaixo do jogando
-- 3: Texto que vai aparecer abaixo do anterior
-- 4: Caso a opção "Mostrar Tempo" estiver habilitada, marcar essa caixa ao lado vai poder definir o tempo final do contador do discord (Exemplo: Tempo de partida tdm contando regressivamente)
-- 5: Substituir o Tempo, marcar essa opção caso queira que sempre altere o tempo quando você mudar algum valor das caixas de texto
-- 6: Com essa opção marcada, vai decidir se exibe ou não o tempo no discord.
-- 7: Icone maior que vai aparecer no discord
-- 8: Texto que que vai aparecer em cima do icone maior (tooltip).
-- 9: Icone menor que vai aparecer no discord
-- 10: Texto que que vai aparecer em cima do icone meno (tooltip).
-
-OBS: Icone menor e maior podem ser iguais, o discord teve uma mudança que permite isso agora.
-
-<img src="https://i.imgur.com/oXHK5PS.png">
-
-A seguir a lista de icones disponíveis (peguei do fankit do warface russo):
+<hr/>
 
 <img src="https://i.imgur.com/wPjDwDa.png">
 <img src="https://i.imgur.com/MseYFJu.png">
