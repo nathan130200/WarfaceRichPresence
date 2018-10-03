@@ -29,7 +29,7 @@ Mostra o status jogando warface no seu perfil do discord.
 
 - Assim que clicar, o discord e o aplicativo serão sincronizados pelo IPC.<br><br>
 
-<img src="https://i.imgur.com/WNPo1dc.png"><br/>
+<img src="https://i.imgur.com/o3vRcaB.png"><br/>
 
 **1**: Sua discordtag vai aparecer.<br>
 **2**: Sua Id do discord também vai aparecer.<br>
