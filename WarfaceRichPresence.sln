@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
-MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarfaceRichPresence", "src\WarfaceRichPresence\WarfaceRichPresence.csproj", "{BA432135-24A3-4203-AD15-734547DCBD92}"
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarfaceRichPresence", "WarfaceRichPresence\WarfaceRichPresence.csproj", "{1A93E72F-E79B-4A07-ADD6-1D1A6AB7F494}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BA432135-24A3-4203-AD15-734547DCBD92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA432135-24A3-4203-AD15-734547DCBD92}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA432135-24A3-4203-AD15-734547DCBD92}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA432135-24A3-4203-AD15-734547DCBD92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A93E72F-E79B-4A07-ADD6-1D1A6AB7F494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A93E72F-E79B-4A07-ADD6-1D1A6AB7F494}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A93E72F-E79B-4A07-ADD6-1D1A6AB7F494}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A93E72F-E79B-4A07-ADD6-1D1A6AB7F494}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4DC092DD-08C1-49CC-A254-24E62B193A09}
+		SolutionGuid = {D910D179-E78D-4500-B206-135F8167644E}
 	EndGlobalSection
 EndGlobal
