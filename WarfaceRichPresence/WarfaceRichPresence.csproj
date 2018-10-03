@@ -34,9 +34,13 @@
   <PropertyGroup>
     <StartupObject>WarfaceRichPresence.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\App.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -46,15 +50,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DiscordRpc.cs" />
+    <Compile Include="Controls\InLobbyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\InLobbyControl.Designer.cs">
+      <DependentUpon>InLobbyControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SeparatorLine.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Core\DiscordRpc.cs" />
+    <Compile Include="Core\DiscordUser.cs" />
+    <Compile Include="Core\EventHandlers.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\Reply.cs" />
+    <Compile Include="Core\RichPresence.cs" />
+    <Compile Include="Core\RichPresenceBuilder.cs" />
+    <Compile Include="Core\RichPresenceStruct.cs" />
+    <EmbeddedResource Include="Controls\InLobbyControl.resx">
+      <DependentUpon>InLobbyControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -66,6 +88,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -76,6 +99,40 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\TitilliumWeb-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\App.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScreenShots\sirius.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScreenShots\vault.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScreenShots\invasion.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScreenShots\mojave.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScreenShots\streetwars.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScreenShots\hangar20.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScreenShots\oildepot.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScreenShots\palace.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScreenShots\d17.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ScreenShots\blackmamba.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

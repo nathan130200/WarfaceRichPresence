@@ -5,76 +5,112 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Windows.Forms;
+using WarfaceRichPresence.Core;
 
 namespace WarfaceRichPresence
 {
 	public partial class MainForm : Form
 	{
-		public EventHandlers RpcHandlers;
-		private Thread RunCallbacksThread;
+		public EventHandlers Handlers;
+		public DiscordUser CurrentUser;
+		private Random rnd;
 
 		public MainForm()
 		{
+			rnd = new Random(Environment.TickCount);
 			InitializeComponent();
 		}
 
 		private void MainForm_Load(object sender, EventArgs e)
 		{
-			RpcHandlers = new EventHandlers
-			{
-				readyCallback = DiscordRpc_Ready
-			};
+			Handlers = new EventHandlers();
+			Handlers.readyCallback = Discord_Ready;
+			Handlers.disconnectedCallback = Discord_Disconnect;
+			Handlers.errorCallback = Discord_Error;
+
+			var off = rnd.Next(0, Program.Backgrounds.Length);
+			var bg = Program.Backgrounds [off];
+			BackgroundImage = bg;
 		}
 
-		void DiscordRpc_Ready(ref DiscordUser connectedUser)
+		void Discord_Ready(ref DiscordUser pUser)
 		{
-			BeginInvoke(new Action<DiscordUser>((user) =>
+			Invoke(new Action<DiscordUser>((user) =>
 			{
-				lbUsername.Text = $"{user.username}#{user.discriminator}";
+				btnToggle.Enabled = true;
 
-				var format = "";
+				pbAvatarImage.ImageLocation = $"https://cdn.discordapp.com/avatars/{user.userId}/{user.avatar}.png?size=128";
+				lbUsername.Text = $"{user.username}#{user.discriminator}\n{user.userId}";
 
-				if (user.avatar.StartsWith("a_"))
-					format = "gif";
-				else
-					format = "jpeg";
+				flpMain.Enabled = true;
+			}), pUser);
 
-				pboxAvatar.ImageLocation = "https://cdn.discordapp.com/avatars/" + user.userId + "/" + user.avatar + "." + format + "?size=512";
-			}), connectedUser);
+			CurrentUser = pUser;
 		}
 
-		private void btnConnect_Click(object sender, EventArgs e)
+		void Discord_Disconnect(int code, string message)
 		{
-			DiscordRpc.Initialize(tbApplicationId.Text, ref RpcHandlers, true, null);
-
-			RunCallbacksThread = new Thread(() =>
-			{
-				while (true)
-				{
-					DiscordRpc.RunCallbacks();
-					Thread.Sleep(1000);
-				}
-			});
-
-			RunCallbacksThread.Start();
+			MessageBox.Show($"Conexão com Discord perdida!\n{message}", code.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 		}
 
-		private void btnDisconnect_Click(object sender, EventArgs e)
+		void Discord_Error(int code, string message)
 		{
-
+			MessageBox.Show($"Conexão com Discord ocorreu erro!\n{message}", code.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
 		}
 
-		protected override void OnClosing(CancelEventArgs e)
+		bool initialized = false;
+
+		private void btnToggle_Click(object sender, EventArgs e)
 		{
-			if(RunCallbacksThread != null)
+			if(!ulong.TryParse(tbApplicationId.Text, out var _))
 			{
-				RunCallbacksThread.Abort(); ;
-				RunCallbacksThread = null;
+				MessageBox.Show("Id da aplicação digitado está incorreto!\nhttps://discordapp.com/developers/applications/",
+					"",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Error,
+					MessageBoxDefaultButton.Button1,
+					MessageBoxOptions.DefaultDesktopOnly);
+				return;
 			}
 
-			base.OnClosing(e);
+			if (!initialized)
+			{
+				DiscordRpc.Initialize(tbApplicationId.Text, ref Handlers, false, null);
+				btnToggle.Text = "Desconectar";
+				initialized = true;
+				btnToggle.Enabled = false;
+				tbApplicationId.Enabled = false;
+				btnLimparPresenca.Enabled = true;
+			}
+			else
+			{
+				pbAvatarImage.ImageLocation = null;
+
+				DiscordRpc.ClearPresence();
+				DiscordRpc.Shutdown();
+				btnToggle.Text = "Conectar";
+				initialized = false;
+				btnToggle.Enabled = true;
+				tbApplicationId.Enabled = true;
+				lbUsername.Text = null;
+
+				flpMain.Enabled = false;
+				btnLimparPresenca.Enabled = false;
+			}
+		}
+
+		private void RunCallbacksTimer_Tick(object sender, EventArgs e)
+		{
+			DiscordRpc.RunCallbacks();
+		}
+
+		private void btnLimparPresenca_Click(object sender, EventArgs e)
+		{
+			if (initialized)
+				DiscordRpc.ClearPresence();
+			else
+				return;
 		}
 	}
 }
