@@ -166,7 +166,7 @@
 			this.lbDescription.AutoSize = true;
 			this.lbDescription.BackColor = System.Drawing.Color.Transparent;
 			this.lbDescription.Font = new System.Drawing.Font("Titillium Web", 14F, System.Drawing.FontStyle.Bold);
-			this.lbDescription.Location = new System.Drawing.Point(47, 4);
+			this.lbDescription.Location = new System.Drawing.Point(44, 5);
 			this.lbDescription.Name = "lbDescription";
 			this.lbDescription.Size = new System.Drawing.Size(96, 29);
 			this.lbDescription.TabIndex = 4;
