@@ -39,6 +39,10 @@ Mostra o status jogando warface no seu perfil do discord.
 
 **5**: Limpa o status jogando no discord.
 
+## Exemplo:
+
+<img src="https://i.imgur.com/0SxLEMP.png"><br>
+
 <hr/>
 
 <img src="https://i.imgur.com/wPjDwDa.png">
